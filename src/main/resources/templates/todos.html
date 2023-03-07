@@ -1,0 +1,28 @@
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <meta charset="utf-8">
+</head>
+<h1>Todo App</h1>
+  <form method="post" action="/addTodo">
+    <input type="text" name="todo"/>
+    <input type="submit" name="AddTodo" value="제출"/>
+  </form>
+  <hr>
+  <ul>
+    <li th:each="todo : ${todos}">
+      <span th:text="${todo.todo}"></span>
+    </li>
+  </ul>
+<!--/* 이곳에 각 view가 위치합니다. */-->
+<th:block layout:fragment="head"></th:block>
+
+<div>
+  <div layout:fragment="header"></div>
+
+  <div layout:fragment="content"></div>
+
+  <div layout:fragment="footer"></div>
+</div>
+</html>

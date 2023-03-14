@@ -23,6 +23,10 @@ public class ToDo {
     @NotNull
     private String todo;
 
+    public ToDo(String todo) {
+        this.todo = todo;
+    }
+
     public String getTodo() {
         return todo;
     }
